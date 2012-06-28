@@ -3,10 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="horizontal" >
-
+
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/article_holder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,9 +18,9 @@
             android:id="@+id/article_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0"            
+            android:layout_weight="0"
             android:orientation="vertical"
-            android:paddingBottom="5sp">
+            android:paddingBottom="5sp" >
 
             <TextView
                 android:id="@+id/title"
@@ -29,10 +29,11 @@
                 android:layout_weight="1"
                 android:text="There are many variations of passages of Lorem Ipsum available"
                 android:textSize="16sp" />
-
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
 
                 <TextView
                     android:id="@+id/tags"
@@ -61,16 +62,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:background="?horizontalDivider"
-            android:paddingTop="2dip" >
-        </ImageView>
+            android:paddingTop="2dip" />
 
         <WebView
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5sp" >
-        </WebView>
+            android:padding="5sp" />
 
         <LinearLayout
             android:id="@+id/attachments_holder"
