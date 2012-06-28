@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.fox.ttrss.billing.BillingHelper;
-import org.fox.ttrss.billing.BillingService;
 import org.fox.ttrss.offline.OfflineActivity;
 import org.fox.ttrss.offline.OfflineDownloadService;
 import org.fox.ttrss.offline.OfflineUploadService;
@@ -1064,7 +1062,7 @@ public class MainActivity extends CommonActivity implements OnlineServices {
 									
 									Log.d(TAG, "Selected product: " + products[m_selectedProduct]);
 
-									BillingHelper.requestPurchase(MainActivity.this, (String) products[m_selectedProduct]);
+									//BillingHelper.requestPurchase(MainActivity.this, (String) products[m_selectedProduct]);
 									
 									dialog.dismiss();									
 								}
@@ -1598,7 +1596,7 @@ public class MainActivity extends CommonActivity implements OnlineServices {
 				m_menu.findItem(R.id.set_labels).setEnabled(m_apiLevel >= 1);
 				m_menu.findItem(R.id.article_set_note).setEnabled(m_apiLevel >= 1);
 
-				m_menu.findItem(R.id.donate).setVisible(BillingHelper.isBillingSupported());
+				m_menu.findItem(R.id.donate).setVisible(false);
 								
 			} else {
 				m_menu.setGroupVisible(R.id.menu_group_logged_in, false);
@@ -1650,7 +1648,7 @@ public class MainActivity extends CommonActivity implements OnlineServices {
 		
 		m_isOffline = false;
 
-		startService(new Intent(MainActivity.this, BillingService.class));
+		//startService(new Intent(MainActivity.this, BillingService.class));
 		
 		initMainMenu();
 		
